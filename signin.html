@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standoutputt Sign-In</title>
+   <style>
+    * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f3f3;
+}
+
+.signin-container {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.signin-logo img {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.signin-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.create-account-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e7e9ec;
+    border: 1px solid #a2a6ac;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.help-section a {
+    color: #0066c0;
+    font-size: 12px;
+}
+
+   </style>
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-logo">
+            <img src="amazon_logo.png" alt="Amazon Logo" width="100">
+        </div>
+        <h2>Sign-In</h2>
+        <form action="/signin" method="POST">
+            <label for="email">Email or mobile phone number</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="signin-button">Sign-In</button>
+        </form>
+        <div class="help-section">
+            <a href="#">Forgot your password?</a>
+            <p>By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+        </div>
+        <hr>
+        <button class="create-account-button">Create your Amazon account</button>
+    </div>
+</body>
+</html>

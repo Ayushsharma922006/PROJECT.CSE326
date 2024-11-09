@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.cart-container {
+    width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cart-items, .delivery-details, .order-summary, .payment-options {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 100px;
+    margin-right: 15px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+.order-summary p, .payment-options label {
+    font-size: 16px;
+    color: #555;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Shopping Cart</h1>
+
+        <!-- Cart Items -->
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="https://via.placeholder.com/100" alt="Item Image">
+                <div class="item-details">
+                    <h2>Item Name 1</h2>
+                    <p>Price: $25.00</p>
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" min="1" value="1" onchange="updateTotal()">
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="https://via.placeholder.com/100" alt="Item Image">
+                <div class="item-details">
+                    <h2>Item Name 2</h2>
+                    <p>Price: $15.00</p>
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" min="1" value="1" onchange="updateTotal()">
+                </div>
+            </div>
+        </div>
+
+        <!-- Delivery Details -->
+        <div class="delivery-details">
+            <h2>Delivery Details</h2>
+            <p>Name: John Doe</p>
+            <p>Address: 123 Main St, Anytown, USA</p>
+            <p>Delivery Time: 3-5 Business Days</p>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <p>Items Total: $<span id="items-total">40.00</span></p>
+            <p>Delivery Fee: $<span id="delivery-fee">5.00</span></p>
+            <p><strong>Total: $<span id="total-price">45.00</span></strong></p>
+        </div>
+
+        <!-- Payment Options -->
+        <div class="payment-options">
+            <h2>Payment Options</h2>
+            <label><input type="radio" name="payment" value="credit-card" checked> Credit Card</label>
+            <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+            <label><input type="radio" name="payment" value="cash"> Cash on Delivery</label>
+        </div>
+
+        <!-- Place Order Button -->
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
